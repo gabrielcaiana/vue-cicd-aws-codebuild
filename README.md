@@ -1,64 +1,27 @@
-# vue-project-example
+# Vue.js Application Deployment with GitHub Actions and AWS Codebuild
 
-This template should help get you started developing with Vue 3 in Vite.
+Deploying a Vue.js application with Continuous Integration (CI) using GitHub Actions and Continuous Deployment (CD) using AWS CodeBuild.
 
-## Recommended IDE Setup
+## Overview
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This project demonstrates an automated pipeline for building, testing, and deploying a Vue.js application using modern CI/CD practices.
 
-## Type Support for `.vue` Imports in TS
+- CI: GitHub Actions
+- CD: AWS CodeBuild
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Requirements
 
-## Customize configuration
+- Node.js (version X.X.X)
+- Vue CLI (optional, if using Vue CLI project)
+- AWS Account
+- GitHub Account
+- AWS CLI configured locally (optional, for local tests)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Workflow
 
-## Project Setup
+1. Code pushed to GitHub triggers GitHub Actions for:
+   - Linting
+   - Unit tests
+   - Building the application
 
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-pnpm build
-
-# Runs the end-to-end tests
-pnpm test:e2e
-# Runs the tests only on Chromium
-pnpm test:e2e --project=chromium
-# Runs the tests of a specific file
-pnpm test:e2e tests/example.spec.ts
-# Runs the tests in debug mode
-pnpm test:e2e --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+2. Upon success, CodeBuild handles the deployment process on AWS.
