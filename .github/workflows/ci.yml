@@ -39,7 +39,7 @@ jobs:
           CI: true
 
       - name: Unit Tests
-        run: pnpm test
+        run: pnpm test:unit
         env:
           CI: true
 
