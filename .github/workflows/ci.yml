@@ -42,6 +42,14 @@ jobs:
         run: pnpm test:unit
         env:
           CI: true
+        
+      - name: Build
+        run: pnpm build
+        env:
+          CI: true
+          
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
 
       - name: E2E Tests
         run: pnpm test:e2e
